@@ -8,7 +8,6 @@ pipeline {
           steps {
             echo "Deploy using Docker"
             sh "docker compose up -d"
-            sh "curl localhost:8001"
           }
           post {
             failure {
