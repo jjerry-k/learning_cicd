@@ -21,11 +21,11 @@ RUN apt-get install -y \
         libglib2.0-0
 
 RUN apt-get update && apt-get -y upgrade
-RUN pip3 install poetry
+RUN pip3 install --no-cache-dir poetry
 
-COPY pyproject.toml /tmp
+COPY requirements.txt /tmp
 WORKDIR "/tmp"
-RUN poetry install && \ 
+RUN pip3 install -r requirements.txt && \ 
         rm /tmp/*
 
 WORKDIR "/app"
