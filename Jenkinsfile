@@ -3,15 +3,16 @@ pipeline {
 
     stages {
         // docker Deploy
-        stage('Deploy Docker') {
+        stage("Deploy app") {
           agent any
           steps {
-            echo 'Deploy Docker '
-            sh 'docker compose up -d'
+            echo "Deploy using Docker"
+            sh "docker compose up -d"
+            sh "curl localhost:8001"
           }
           post {
             failure {
-              error 'This pipeline stops here...'
+              error "This pipeline stops here..."
             }
           }
         }

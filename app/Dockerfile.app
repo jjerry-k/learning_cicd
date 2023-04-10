@@ -21,7 +21,6 @@ RUN apt-get install -y \
         libglib2.0-0
 
 RUN apt-get update && apt-get -y upgrade
-RUN pip3 install --no-cache-dir poetry
 
 COPY requirements.txt /tmp
 WORKDIR "/tmp"
