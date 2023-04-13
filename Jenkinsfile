@@ -7,7 +7,7 @@ pipeline {
           agent any
           steps {
             echo "Deploy using Docker"
-            sh "docker compose up -d"
+            sh "docker compose up --build -d"
           }
           post {
             failure {
