@@ -9,6 +9,6 @@ app.include_router(recognition_router.router)
 async def index():
     return {"message": "home"}
 
-@app.get("/test")
-async def test():
-    return {"message": "test"}
+@app.get("/health")
+async def health():
+    return {"message": "health"}
