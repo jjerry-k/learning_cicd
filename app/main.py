@@ -8,3 +8,7 @@ app.include_router(recognition_router.router)
 @app.get("/")
 async def index():
     return {"message": "home"}
+
+@app.get("/test")
+async def test():
+    return {"message": "test"}
